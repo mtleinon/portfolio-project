@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'g#)(1aoi)^de(v+bg%$&)p(1@28#sw@17bm+&f_@5j7z9qydj0'
+SECRET_KEY = 'to be set in the local_settings.py'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfoliodb',
         'USER': 'postgres',
-        'PASSWORD' : 'Post2143+1',
+        'PASSWORD' : 'to be set in the local_settings.py',
         'HOST': 'localhost',
         'PORT': '5432'
 
@@ -135,3 +135,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
