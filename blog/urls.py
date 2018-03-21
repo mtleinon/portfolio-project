@@ -8,4 +8,4 @@ from .views import allblogs, detail
 urlpatterns = [
     path('', allblogs, name="allblogs"),
     path('<int:blog_id>/', detail, name='detail'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
+] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
